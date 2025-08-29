@@ -1,0 +1,7 @@
+.events { display: grid; gap: 16px; grid-template-columns: repeat(3, minmax(0,1fr)); }
+.event { padding: 16px; border-radius: var(--radius); background: var(--card); border: 1px solid rgba(255,255,255,0.06); }
+.event h3 { margin: 0 0 6px; font-size: 20px; }
+.event .meta { font-size: 14px; color: var(--muted); margin-bottom: 8px; }
+.event .actions { margin-top: 10px; }
+@media (max-width: 900px) { .events { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 700px) { .events { grid-template-columns: 1fr; } }
