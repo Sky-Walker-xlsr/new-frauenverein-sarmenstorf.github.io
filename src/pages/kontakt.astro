@@ -1,0 +1,33 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout
+    title="Kontakt – Frauenverein Sarmenstorf"
+    styleFile="/src/styles/kontakt.css"
+>
+    <Header />
+
+    <main>
+        <section class="kontakt section">
+            <div class="container">
+                <h1>Kontakt</h1>
+                <p>
+                    Kontaktiere uns bei Interesse, Fragen oder Ideen rund um den
+                    Frauenverein Sarmenstorf. Wir freuen uns auf deine Nachricht
+                    und melden uns so rasch wie möglich bei dir.
+                </p>
+
+                <a
+                    class="button"
+                    href="mailto:kontakt@frauenverein-sarmenstorf.ch"
+                    >E-Mail senden</a
+                >
+            </div>
+        </section>
+    </main>
+    
+    <Footer />
+</Layout>

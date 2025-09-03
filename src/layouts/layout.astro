@@ -1,0 +1,20 @@
+---
+const {
+  title = "Frauenverein Sarmenstorf",
+  styleFile = null
+} = Astro.props;
+---
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="/src/styles/base.css" />
+    <!-- Seiten-spezifisches CSS -->
+    {styleFile && <link rel="stylesheet" href={styleFile} />}
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

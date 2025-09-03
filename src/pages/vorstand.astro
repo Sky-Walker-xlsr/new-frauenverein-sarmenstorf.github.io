@@ -1,0 +1,91 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+// Anzahl Bilder manuell setzen:
+const count = 2; // HIER anpassen, falls mehr Bilder dazukommen
+const bilder = Array.from({ length: count }, (_, i) => [
+  `/images/vorstand/vorstand-${i + 1}.jpg`,
+  `/images/vorstand/vorstand-${i + 1}.JPG`
+]);
+---
+
+<Layout
+    title="Vorstand – Frauenverein Sarmenstorf"
+    styleFile="/src/styles/vorstand.css"
+>
+    <Header />
+
+    <main>
+        <section class="vorstand">
+            <div class="container text-center">
+                <h1>Vorstand</h1>
+
+                <!-- Slideshow -->
+                <div class="slideshow-container">
+                    <div class="slideshow-track" id="slideshow-track">
+                        {bilder.map((srcs, i) => (
+                            <img
+                                src={srcs[0]}
+                                onError={`this.onerror=null;this.src='${srcs[1]}'`}
+                                alt={`Vorstand ${i + 1}`}
+                                loading="lazy"
+                            />
+                        ))}
+                    </div>
+                </div>
+
+                <!-- Mitglieder -->
+                <div class="vorstand-grid">
+                    <div>
+                        <p><strong>Präsidentin:</strong><br />Daniela Strebel</p>
+                        <p><strong>Kassierin:</strong><br />Susi Tschumi</p>
+                        <p><strong>Aktuarin:</strong><br />(Conni Hubel)</p>
+                    </div>
+                    <div>
+                        <p><strong>Vizepräsidentin, Anlässe, Freizeitplausch:</strong><br />Nicole Salm</p>
+                        <p><strong>Anlässe:</strong><br />Andrea Zuber</p>
+                    </div>
+                </div>
+
+                <!-- Text -->
+                <p class="intro">
+                    Ideen, Anregungen oder Wünsche können jederzeit gerne an uns gerichtet werden.<br />
+                    Wir versuchen diese umzusetzen in der Gestaltung des kommenden Jahresprogrammes.<br />
+                    Zusammen mit euch allen wünschen wir uns unvergessliche Stunden.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</Layout>
+
+<script>
+  const track = document.getElementById("slideshow-track");
+  const slides = track.querySelectorAll("img");
+
+  // Clone für Endlos-Slideshow
+  const firstClone = slides[0].cloneNode(true);
+  track.appendChild(firstClone);
+
+  let index = 0;
+  const intervalTime = 5000;
+
+  function moveSlide() {
+    index++;
+    track.style.transition = "transform 0.8s ease-in-out";
+    track.style.transform = `translateX(-${index * 100}%)`;
+
+    if (index === slides.length) {
+      setTimeout(() => {
+        track.style.transition = "none";
+        track.style.transform = "translateX(0)";
+        index = 0;
+      }, 800);
+    }
+  }
+
+  setInterval(moveSlide, intervalTime);
+</script>

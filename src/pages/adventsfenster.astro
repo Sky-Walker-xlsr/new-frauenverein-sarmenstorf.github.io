@@ -1,0 +1,260 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+// Daten für die 24 Kästchen
+const adventsfenster = [
+    {
+        tag: 1,
+        name: "Familie Bütler",
+        adresse: "Brunnmattstrasse 20",
+        
+        umtrunk: "Mit Umtrunk",
+    },
+
+    {
+        tag: 2,
+        name: "Verfügbar",
+        adresse: "",
+        
+        umtrunk: "",
+    },
+
+    {
+        tag: 3,
+        name: "Familie Wengle/Wenk",
+        adresse: "Feldeggstrasse 20",
+        
+        umtrunk: "Mit Umtrunk",
+    },
+
+    {
+        tag: 4,
+        name: "Fam. Rostan",
+        adresse: "Bahndammweg 6c",
+        
+        umtrunk: "Mit Umtrunk", 
+    },
+
+    {
+        tag: 5,
+        name: "VVS",
+        adresse: "VVS-Rabatte Marktstrasse",
+        
+        umtrunk: "Mit Umtrunk",
+    },
+
+    {
+        tag: 6,
+        name: "Familie Wey",
+        adresse: "Kreuzrain 8",
+        
+        umtrunk: "", // ?
+    },
+
+    {
+        tag: 7,
+        name: "Familie Weibel",
+        adresse: "Jurastrasse 13",
+        
+        umtrunk: "Kein Umtrunk",
+    },
+
+    {
+        tag: 8,
+        name: "Verfügbar",
+        adresse: "",
+        
+        umtrunk: "",
+    },
+
+    {
+        tag: 9,
+        name: "Verfügbar",
+        adresse: "",
+        
+        umtrunk: "",
+    },
+
+    {
+        tag: 10,
+        name: "Verfügbar",
+        adresse: "",
+        
+        umtrunk: "",
+    },
+
+    {
+        tag: 11,
+        name: "Frauenverein",
+        adresse: "Pfarreitreff",
+        
+        umtrunk: "Mit Umtrunk",
+    },
+
+    {
+        tag: 12,
+        name: "Ruepp Schreinerei AG",
+        adresse: "Feldeggstrasse 3",
+        
+        umtrunk: "Mit Umtrunk",
+    },
+
+    {
+        tag: 13,
+        name: "Fam. Frankenfeld",
+        adresse: "Feldeggstrasse 4",
+        
+        umtrunk: "Mit Umtrunk",
+    },
+
+    {
+        tag: 14,
+        name: "Verfügbar",
+        adresse: "",
+        
+        umtrunk: "",
+    },
+
+    {
+        tag: 15,
+        name: "Verfügbar",
+        adresse: "",
+        
+        umtrunk: "",
+    },
+
+    {
+        tag: 16,
+        name: "Verfügbar",
+        adresse: "",
+        
+        umtrunk: "",
+    },
+
+    {
+        tag: 17,
+        name: "Jubla",
+        adresse: "Breitistrasse 18",
+        
+        umtrunk: "", // ?
+    },
+
+    {
+        tag: 18,
+        name: "Verfügbar",
+        adresse: "",
+        
+        umtrunk: "",
+    },
+
+    {
+        tag: 19,
+        name: "Verfügbar",
+        adresse: "",
+        
+        umtrunk: "",
+    },
+
+    {
+        tag: 20,
+        name: "Verfügbar",
+        adresse: "",
+        
+        umtrunk: "",
+    },
+
+    {
+        tag: 21,
+        name: "Verfügbar",
+        adresse: "",
+        
+        umtrunk: "",
+    },
+
+    {
+        tag: 22,
+        name: "Verfügbar",
+        adresse: "",
+        
+        umtrunk: "",
+    },
+
+    {
+        tag: 23,
+        name: "Verfügbar",
+        adresse: "",
+        
+        umtrunk: "",
+    },
+
+    {
+        tag: 24,
+        name: "Kirche",
+        adresse: "Kaplaneiweg 2",
+        
+        umtrunk: "",
+    },
+];
+---
+
+<Layout
+    title="Adventsfenster – Frauenverein Sarmenstorf"
+    styleFile="/src/styles/adventsfenster.css"
+>
+    <Header />
+
+    <main>
+        <section class="intro">
+            <div class="container">
+                <h1 class="page-title">Adventsfenster 2025</h1>
+                <p>
+                    Auch dieses Jahr laden wir herzlich zu den traditionellen <strong
+                        >Adventsfenstern</strong
+                    > in Sarmenstorf ein. Vom <strong
+                        >1. bis 24. Dezember</strong
+                    > wird jeden Abend um <strong>18:00 Uhr</strong> ein neues Fenster
+                    feierlich eröffnet. Familien, Vereine, Firmen und die Kirche
+                    gestalten liebevoll ihre Fenster und schenken damit unserer Gemeinde
+                    eine besondere vorweihnachtliche Stimmung.
+                </p>
+                <p>
+                    Einige Gastgeberinnen und Gastgeber laden anschliessend zu
+                    einem kleinen Umtrunk ein – eine wunderbare Gelegenheit,
+                    sich in gemütlicher Runde zu treffen und auszutauschen. Wir
+                    freuen uns auf viele schöne Begegnungen und wünschen allen
+                    eine besinnliche Adventszeit.
+                </p>
+            </div>
+        </section>
+
+        <section class="adventsfenster section">
+            <div class="container">
+                <div class="calendar-grid">
+                    {
+                        adventsfenster.map((fenster) => (
+                            <div class="flip-card">
+                                <div class="flip-inner">
+                                    <div class="flip-front">{fenster.tag}</div>
+                                    <div class="flip-back">
+                                        <>
+                                            <strong>{fenster.name}</strong>
+                                            <br />
+                                        </>
+                                        {fenster.adresse}
+                                        <br />
+                                        {fenster.umtrunk}
+                                        <br />
+                                    </div>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</Layout>

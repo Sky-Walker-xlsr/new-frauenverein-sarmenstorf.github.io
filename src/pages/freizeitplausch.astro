@@ -1,0 +1,35 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Freizeitplausch – Frauenverein Sarmenstorf" styleFile="/src/styles/freizeitplausch.css">
+  <Header />
+
+  <main>
+    <section class="section ueber-uns">
+      <div class="container">
+
+        <h1>Freizeitplausch</h1>
+
+        <p>
+          Der Freizeitplausch findet wie gewohnt in den Frühlingsferien statt.
+        </p>
+        <p>
+          Info und Anmeldung rechts.
+        </p>
+        <p>
+          Zuständig ist <strong>Nicole Salm</strong>.
+        </p>
+
+        <div class="about-image">
+          <img src="/images/freizeitplausch/logo-freizeitplausch.png" alt="Freizeitplausch Bild" />
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

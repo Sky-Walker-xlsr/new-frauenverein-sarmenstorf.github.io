@@ -1,9 +1,0 @@
-.form { display: grid; gap: 12px; max-width: 640px; }
-.form label { font-weight: 600; }
-.form input, .form textarea {
-  width: 100%; padding: 12px 14px; border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.03);
-  color: var(--fg);
-}
-.form textarea { min-height: 140px; resize: vertical; }
-.impressum { margin-top: 30px; color: var(--muted); font-size: 14px; line-height: 1.7; }
