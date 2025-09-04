@@ -3,5 +3,7 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  base: '/new-frauenverein-sarmenstorf/',  // 👈 wichtig für GitHub Pages
+  site: 'https://sky-walker-xlsr.github.io/new-frauenverein-sarmenstorf/',
+  base: '/new-frauenverein-sarmenstorf/',
 });
+
